@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgykmn6vqpe8u"]
+
+[ext_resource type="PackedScene" uid="uid://fxucg144womb" path="res://Menu.tscn" id="1_7a1gj"]
+
+[node name="Main" type="Node2D" groups=["To add"]]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Menu" parent="." instance=ExtResource("1_7a1gj")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Game.tscn")
+spawn_path = NodePath("..")

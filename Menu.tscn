@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://fxucg144womb"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_wjoyr"]
+
+[node name="Menu" type="CanvasLayer" groups=["Menu"]]
+script = ExtResource("1_wjoyr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 135.0
+offset_bottom = 206.0
+
+[node name="Host" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Host"
+
+[node name="Join" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Join"
+
+[node name="Start Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="Disconect" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Disconect"
+
+[node name="Update" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Update"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "IP:"
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 282.0
+offset_right = 682.0
+offset_bottom = 648.0
+
+[node name="Container" type="VBoxContainer" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -324.0
+offset_right = 125.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container2" type="VBoxContainer" parent="."]
+offset_left = 773.0
+offset_top = 2.0
+offset_right = 1152.0
+offset_bottom = 25.0
+
+[node name="Hosting" type="Label" parent="Container2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Hosting: false"
+
+[node name="Joining" type="Label" parent="Container2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Joining: false"
+
+[connection signal="pressed" from="VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Disconect" to="." method="_on_disconect_pressed"]
+[connection signal="pressed" from="VBoxContainer/Update" to="." method="_on_update_pressed"]
